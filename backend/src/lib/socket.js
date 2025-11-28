@@ -2,7 +2,7 @@ import { Server } from "socket.io";
 import http from "http";
 import express from "express";
 import { ENV } from "./env.js";
-import { socketAuthMiddleware } from "../middlewear/socket.auth.middlewear.js";
+import { socketAuthMiddlewear } from "../middlewear/socket.auth.middlewear.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -15,7 +15,7 @@ const io = new Server(server, {
 });
 
 
-io.use(socketAuthMiddleware);
+io.use(socketAuthMiddlewear);
 
 
 export function getReceiverSocketId(userId) {
